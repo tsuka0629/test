@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html style="width: 100%;height: 100%">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="layout.css">
+  <script src="../js/bodymovin.min.js"></script>
+</head>
+<body>
+<!--------------->
+  <div style="position:fixed;left:60px;top:60px;font-size:2rem;z-index:0;color:black;background-color:white;line-height:3rem;text-align:left;">Vol.1
+   金沢</div>
+  <div style="position:fixed;right:60px;bottom:30px;font-size:2rem;z-index:0;color:black;background-color:white;line-height:3rem;text-align:left;"> ↑</div>
+  <div class="firstview">
+    <div id="bodymovin" >
+      <video src="forest.mp4" autoplay loop muted style="position:fixed; z-index:-2 ;top:0; left:0 ;width:100%;"></video>
+    </div>
+  </div>
+
+<!--------------->
+<div class="wrapper clearfix">
+  <div class="intro">
+    <div class="contents">
+      <div class="left" style="font-size:0;">
+        <video src="night.mp4" autoplay loop muted style="width:100%;"></video>
+        <div style="background-color: rgb(246, 177, 214); width:440px; height:250px;  margin:0 100px 0px 0;"></div>
+      </div>
+      <div class="right">
+        <div class="text">
+        <span style="font-size:2.4rem;line-height:5rem;border-bottom:2px solid rgb(237, 126, 186);">星巡りの歌 : イーハトーブ幻燈詩</span><br><br>
+    卓上のランプが薄暗い部屋を照らして、うず高く積まれた本にその光を投げかけ、陰鬱なる影を落としていた。どこか遠いところから来たうす暗い雨雲が降らす雨が、閑静な街を霧のように包み込み、路地を叩く雨音を窓越しに響かせていた。昼前には青空が広がり、連なる家々の壁や屋根の色、そしてその軒先に植わった植木鉢の目の覚めるようであった緑は、午後からの暗い空模様によって全てモノクロームとなって隠れ、それまでつまらないがらくたの集まりであった私の部屋は、黄色の電燈によって燦然と輝いた。
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--------------->
+  <div class="intro">
+    <div class="contents">
+      <div class="left" style="font-size:0;">
+        <div style="background-color: rgb(79, 215, 211); width:440px; height:250px;  margin:0 100px 0px 0;"></div>
+        <video src="sea.mp4" autoplay loop muted style="width:100%;"></video>
+      </div>
+      <div class="right">
+      <div class="text">
+      <span style="font-size:2.4rem;line-height:5rem;border-bottom:2px solid rgb(79, 215, 211)">銀河の星 : それぞれの記憶</span><br><br>
+      熾熱灯に照らされ、幾重にも反射した光の魔法にかけられた、普段は本棚の奥で灰色な日常の風景に調和していた本たちが、一斉に私をその物語へと誘う。時を越えた幻想の効果を前にしては、長い年月を経て黄色くなってしまったものですら手に入れた当初の輝きを取り戻したかのように見えた。本にはそれぞれの記憶がある。一つ一つ全ての本の表紙と題名を見る度に、それを買った時の様子や初めて読んだ時の驚きと楽しさ、そして今に至るまで数え切れないほど読み返してきた日々の楽しさが駆け巡る。私はその宝石のような古今東西の珠玉の名作から、銀河の星の光の粒のように美しい装丁の本を手に取った。
+      </div>
+      </div>
+    </div>
+  </div>
+
+<!--------------->
+  <div class="intro" >
+    <div class="contents">
+    <div class="left" style="font-size:0;">
+      <video src="ramp.mp4" autoplay loop muted style="width:100%;"></video>
+        <div style="background-color: rgb(255, 241, 115); width:440px; height:250px;  margin:0 100px 0px 0;"></div>
+    </div>
+    <div class="right">
+    <div class="text">
+    <span style="font-size:2.4rem;line-height:5rem; border-bottom:2px solid rgb(219, 197, 0);">光の魔法 : 熾熱灯</span><br><br>
+      しかしながら私はその本を他の本と同じ棚に並べることをしていなかった。それはとても長い間、日の当たらない所に在りつづけた。夜空を写しとった美麗な挿絵が明らかに他とは異質な雰囲気を帯びており、その装飾が他の書物に悪い影響を与えることを懸念してできるだけ遠ざけておきたかったのである。ちょうどダイヤモンドの輝きが、小坂鉱山の黒鉱や優美な花崗岩のような他の点で優れた性質をもつ鉱石の素晴らしさを相対的に減じてしまうかのごとく。それは優れ過ぎたがために私の目のつかない所に追放される必要がどうしてもあった。元来私はそうした装飾を好まない。巧妙な言語表現はどんな美しい絵をも上回ると、私は信じていた。
+    </div>
+    </div>
+  </div>
+</div>
+
+<!--------------->
+  <footer>
+    <p>© 2018 Motegi inc.</p>
+  </footer>
+<script>
+// 変数名の重複を防ぐために無名即時関数で処理を設定する
+(function() {
+  var animData = {
+    wrapper: document.getElementById('bodymovin'),
+    animType: 'svg',
+    loop: false,
+    prerender: true,
+    autoplay: true,
+    path: 'data.json'
+  };
+  var anim = bodymovin.loadAnimation(animData);
+})();
+</script>
+
+
+</body>
+</html>

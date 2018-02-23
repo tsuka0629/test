@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+body {
+	font-size:62.5%;
+}
+
+.header {
+
+}
+
+.container {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+}
+
+.ame {
+	display: none;
+}
+.font-family1 {
+
+/*	font-family: "Avenir Next";*/
+	font-family: Helvetica, 'sans-serif';
+	font-weight: bold;
+	font-size: 3em;
+	font-kerning: 300px;
+	padding-bottom: 1.1em;
+
+}
+
+.font-family2 {
+	font-feature-settings:'palt';
+	font-family: 'YuGothic', '游ゴシック';
+	font-weight: normal;
+	font-size: 1.6em;
+	font-kerning: 300px;
+	letter-spacing: 0.1em;
+	line-height:1.9em;
+	padding-bottom: 2em;
+}
+
+
+.layout {
+	text-align: left;
+	padding-top: 6em;
+	padding-bottom: 2em;
+	padding-left: 6em;
+	padding-right: 6em;
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	-moz-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.box {
+	width: 100px;
+	height: 30px;
+	background: #000;
+	transition: all 500ms 0s ease;
+}
+
+.box:hover {
+	background: #FFD000;
+	width: 100%;
+	height: 300px;
+}
+
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+@media (max-width: 1024px){
+	.ame {
+		display: block;
+	}
+	.container {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+}
+
+
+	.font-family1 {
+	font-family: "Avenir Next";
+	font-weight: bold;
+	font-size: 4em;
+	font-kerning: 300px;
+	padding-bottom: 1.5em;
+
+}
+	.font-family2 {
+	font-feature-settings:'palt';
+	font-family: 'YuGothic', '游ゴシック';
+	font-weight: normal;
+	font-size: 1.7em;
+	font-kerning: 300px;
+	letter-spacing: 0.1em;
+	line-height:1.9em;
+}
+}
+
+
+
+
+@media (max-width: 480px){
+
+	.container {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+}
+
+		.font-family1 {
+	font-family: "Avenir Next";
+	font-weight: bold;
+	font-size: 5em;
+	font-kerning: 300px;
+	padding-bottom: 1.5em;
+
+}
+		.font-family2 {
+	font-feature-settings:'palt';
+	font-family: 'YuGothic', '游ゴシック';
+	font-weight: normal;
+	font-size: 1.9em;
+	font-kerning: 300px;
+	letter-spacing: 0.1em;
+	line-height:1.9em;
+}
+.box {
+	width: 100%;
+	height: 60px;
+	background: #000;
+	transition: all 500ms 0s ease;
+}
+
+.box:hover {
+	background: #FFD000;
+	width: 100%;
+	height: 300px;
+}
+
+}

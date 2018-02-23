@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>Stikcy or change header and navigation when scrolling using jQuery #1</title>
+</head>
+
+<body>
+  <header>
+    <h1>New Text</h1>
+  </header>
+
+
+  <nav></nav>
+
+  <main>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </main>
+
+  <footer></footer>
+  <style>
+    /* page style */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+  font-family: "Avenir Next", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+}
+    header {
+      display: flex;
+      height:100vh;
+      /* height:600px; */
+      position: relative;
+      background: #11998e;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      font-size: 10em;
+      font-weight: 100;
+      text-align: center;
+      transform: translateY(-50%);
+    }
+    h1:hover{
+  /* font-weight: bold;
+        transition: 0.1s; */
+        cursor: default;
+    }
+    nav {
+      height: 100px;
+      background: white;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.1);
+    }
+    main {
+      padding: 120px 20px;
+      background: #ecf0f1;
+    }
+    section {
+      max-width: 960px;
+      height: 400px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 5px 5px 0 rgba(0,0,0,0.05);
+    }
+    section + section {
+      margin-top: 20px;
+    }
+    footer {
+      height: 200px;
+      background: black;
+    }
+
+
+
+    /* demo style */
+    .is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      background-color: black;
+        transition: .3s;
+    }
+  </style>
+  <script>
+    $(function() {
+      var $win = $(window),
+          $main = $('main'),
+          $nav = $('nav'),
+          navHeight = $nav.outerHeight(),
+          navPos = $nav.offset().top,
+          fixedClass = 'is-fixed';
+
+      $win.on('load scroll', function() {
+        var value = $(this).scrollTop();
+        if ( value > navPos ) {
+          $nav.addClass(fixedClass);
+          $main.css('margin-top', navHeight);
+        } else {
+          $nav.removeClass(fixedClass);
+          $main.css('margin-top', '0');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>ページローディングテスト1</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="l-wrap">
+      <h1>New Text</h1>
+      <a href="http://localhost/test3/test3.html" class="button">VIEW MORE</a>
+    </div>
+  </header>
+
+  <div id="js-loader" class="loader">
+    <div class="loader-animation"></div>
+  </div>
+
+<!--
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  jQuery
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-->
+<script>
+// ローディング画面をフェードインさせてページ遷移
+$(function(){
+    // リンクをクリックしたときの処理。外部リンクやページ内移動のスクロールリンクなどではフェードアウトさせたくないので少し条件を加えてる。
+    $('a[href ^= "https://newstella.co.jp"]' + 'a[target != "_blank"]').click(function(){
+        var url = $(this).attr('href'); // クリックされたリンクのURLを取得
+        $('#js-loader').fadeIn(600);    // ローディング画面をフェードイン
+        setTimeout(function(){ location.href = url; }, 800); // URLにリンクする
+        return false;
+    });
+});
+
+// ページのロードが終わった後の処理
+$(window).load(function(){
+  $('#js-loader').delay(1000).fadeOut(600); //ローディング画面をフェードアウトさせることでメインコンテンツを表示
+});
+
+// ページのロードが終わらなくても10秒たったら強制的に処理を実行
+$(function(){ setTimeout('stopload()', 10000); });
+function stopload(){
+  $('#js-loader').delay(300).fadeOut(600); //ローディング画面をフェードアウトさせることでメインコンテンツを表示
+}
+</script>
+
+<!--
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  CSS
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-->
+<style>
+/* ブラウザのスクロールバーを常に表示させることでカクカクッとなるのを防ぐ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  overflow-y:scroll;
+}
+body {
+font-family: "Avenir Next", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+}
+header {
+  display: flex;
+  height:100vh;
+  /* height:600px; */
+  position: relative;
+  background: #1bb;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1bb, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1bb, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h1 {
+  font-size: 10em;
+    font-weight: 100;
+    letter-spacing: 10px;
+}
+.l-wrap {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  transform: translateY(-50%);
+}
+/* ローディング関係ない部分のCSS */
+.button{
+  border-radius:1000px;
+  border: solid 1px   rgba(255,255,255,0.6);
+  color: white;
+  display:block;
+  height:60px;
+  line-height:60px;
+  font-weight: 100;
+  font-size: 1em;
+  letter-spacing: 5px;
+  margin:60px auto 0;
+  text-align:center;
+  width:300px;
+  text-decoration: none;
+}
+.button:hover{
+  transition: 0.3s;
+    color: #1bb;
+  background: white;
+}
+img{
+  max-width:100%;
+}
+
+/* ローディングの背景部分のCSS */
+.loader {
+  background: #7F00FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height:100%;
+  left:0;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:10;
+}
+
+/* ローディングのアニメーション部分のCSS */
+.loader-animation,
+.loader-animation:before,
+.loader-animation:after {
+  position: absolute;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  top: 45%;
+  left: 0;
+  text-align: center;
+  transform: translateY(-50%);
+
+}
+.loader-animation {
+  margin: auto;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 0.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 0.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 0.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.4s infinite linear;
+  animation: load8 0.4s infinite linear;
+}
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+
+</body>
+</html>

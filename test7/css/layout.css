@@ -1,0 +1,176 @@
+/*-----------base------------*/
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+body {
+  /*color: black;*/
+  font-size: 1.4rem;
+  font-family: "Cormorant Garamond","YuMincho", "Yu Mincho", Meiryo, serif;
+  background: url('http://68.media.tumblr.com/7bc27bce0a2606210487cd8fc619e62f/tumblr_ogpr6t9r8H1svyeglo1_1280.jpg') no-repeat fixed center;
+  background-color: #11b86d;
+  background-size: cover;
+  text-align: center;
+  font-feature-settings : "palt" 1;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a:link, a:visited, a:hover, a:active {
+  color: white;
+  text-decoration: none;
+}
+.heading {
+  color:black;
+  position: relative;
+  display: inline-block;
+  margin: 30px 0 15px;
+  padding-bottom: 10px;
+  font-size: 4rem;
+  font-weight: Bold;
+  letter-spacing: 0px;
+}
+.heading::before,
+.heading::after {
+  content:'';
+  position:absolute;
+  /*width: 60px;*/
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid white;
+}
+/*.heading::before {
+  bottom: 5px;
+}*/
+
+.s {
+  position: fixed;
+  /*transform: rotate(-90deg);*/
+  /*transform-origin: center;*/
+  /*left:-40px;*/
+  /*top:50%;*/
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+  border: 10px solid white;
+  width:100%;
+  height:100%;
+  /*margin:3% 0 0 3%;*/
+  /*margin: 10px;*/
+  /*font-feature-settings:*/
+}
+/*-----------header------------*/
+.top {
+  display: flex;
+  height:100vh;
+}
+.header {
+  margin: auto;
+  /*padding: 200px 30px 200px;*/
+}
+.site-title-sub {
+  margin: 0 0 30px;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+  color:white;
+}
+.site-title-sub::before,
+.site-title-sub::after {
+  content:'';
+  display: inline-block;
+  width: 140px;
+  height: 1px;
+  margin: 0 30px;
+  background-color: white;
+  vertical-align: middle;
+}
+.site-title {
+  color:white;
+  margin: 50px 0 40px;
+  font-size: 14rem;
+  font-weight: Bold;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+.site-description {
+  margin-bottom: 50px;
+  color: white;
+  font-size: 1.6rem;
+}
+.button {
+  display: inline-block;
+  /*color: black;*/
+  font-weight: bold;
+  width: 200px;
+  padding: 20px;
+  border: 2px solid rgba(255,255,255,1);
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+  /*transition: 0.5s;*/
+}
+.button:hover {
+  opacity: 0.8;
+  border-color: rgba(255,255,255,0.6);
+}
+a.button-showy {
+  /*color: white;
+  background-color: green;
+  border: 2px solid white;*/
+}
+.buttons .button {
+  margin: 10px;
+}
+
+/*-----------about------------*/
+.about {
+  margin:auto;
+  padding: 60px 30px;
+  /*padding-bottom:1000px;*/
+  background-color: #02d4cd;
+  color: black;
+}
+.about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/*-----------works------------*/
+.works {
+  padding: 80px 0;
+  /*padding-bottom:1000px;*/
+  /*background-color: #2f85b0;*/
+  color: black;
+  background-color: #e3e3e3;
+}
+.work-wrapper {
+  display: table;
+  width:100%;
+  margin-top:60px;
+  table-layout: fixed;
+}
+.work-box {
+  position: relative;
+  display: table-cell;
+}
+.work-image {
+  display: block;
+  width: 100%;
+  margin: 0 0 60%;
+}
+.work-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background:url('../image/1.jpg') no-repeat;
+  /*background: no-repeat;*/
+  background-size: 100% 100%;
+  /*opacity: 0.2;*/
+  transform: scaleY(-1);
+}

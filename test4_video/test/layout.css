@@ -1,0 +1,75 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  /*color: black;*/
+  font-size: 1.4rem;
+  /* font-family: "Avenir Next","YuMincho", "Yu Mincho", Meiryo, serif; */
+  color:white;
+  background-size: cover;
+  text-align: center;
+  font-feature-settings : "palt" 1;
+  /* background-color: rgb(235, 96, 121); */
+  font-family: "Avenir Next", "YuGothic",sans-serif;
+/* "Times New Roman", "YuMincho",  Meiryo,  */
+
+}
+#bodymovin {
+  margin: auto;
+    width:800px;
+}
+.firstview {
+  display: flex;
+  height:100vh;
+  /* background-color: rgb(199, 236, 255); */
+}
+.intro{
+  padding:100px 40px ;
+  background-color: rgb(255, 255, 255);
+  /* margin-bottom:  600px ; */
+}
+.text{
+  color: #333;
+  text-align: left;
+  max-width: 440px;
+  font-size: 1.3rem;
+  line-height: 3.3rem;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+  margin: auto;
+}
+.contents{
+  width:960px;
+  margin: auto;
+}
+.contents::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.left{
+  float:left;
+  width: 440px;
+}
+.right{
+    float:right;
+}
+.wrapper{
+  z-index: -1;
+  width: 100%;
+  /* filter: blur(5px); */
+}
+footer {
+  width: 100%;
+}
+footer p{
+  color: gray;
+  font-size: 1.2rem;
+  padding: 40px 0 40px;
+  background-color: white
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
